@@ -2,6 +2,7 @@ package net.deadlydiamond98.items;
 
 import net.deadlydiamond98.HealingPrettyGood;
 import net.deadlydiamond98.blocks.HealPGoodBlocks;
+import net.deadlydiamond98.items.heartapplier.BarrierHeartItem;
 import net.deadlydiamond98.items.heartapplier.CrystalHeartItem;
 import net.deadlydiamond98.items.heartapplier.EmptyHeartContainerItem;
 import net.deadlydiamond98.items.heartapplier.HeartContainerItem;
@@ -33,6 +34,7 @@ public class HealPGoodItems {
     public static final Item HEART_COOKIE = register("heart_cookie", new HealingFood(new FabricItemSettings().food(FoodComponents.COOKIE), 1));
     public static final Item CRYSTAL_APPLE = register("crystal_apple", new HealingFood(new FabricItemSettings().food(CRYSTAL_APPLE_FOOD).rarity(Rarity.RARE), 8));
 
+    public static final Item BARRIER_HEART = register("barrier_heart", new BarrierHeartItem(new FabricItemSettings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item CRYSTAL_HEART = register("crystal_heart", new CrystalHeartItem(new FabricItemSettings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item HEART_CONTAINER = register("heart_container", new HeartContainerItem(new FabricItemSettings().maxCount(16).rarity(Rarity.RARE)));
     public static final Item EMPTY_HEART_CONTAINER = register("empty_heart_container", new EmptyHeartContainerItem(new FabricItemSettings().maxCount(16).rarity(Rarity.UNCOMMON)));

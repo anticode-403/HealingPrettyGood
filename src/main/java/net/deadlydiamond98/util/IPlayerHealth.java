@@ -5,4 +5,6 @@ public interface IPlayerHealth {
     int healpgood$getTempHealth();
     void healpgood$setPermHealth(int value);
     int healpgood$getPermHealth();
+    void healpgood$setBarrierHealth(int value);
+    int healpgood$getBarrierHealth();
 }

@@ -11,6 +11,7 @@ import java.util.UUID;
 public class ExtraHealthHelper {
     private static final UUID PERM_UUID = UUID.fromString("ffd34a3d-591f-445b-968f-057152634a3d");
     private static final UUID TEMP_UUID = UUID.fromString("c1732758-a5cb-4825-bc2c-53e95a3d290b");
+    private static final UUID BARRIER_UUID = UUID.fromString("6ccf61f0-f932-4f85-ac26-cb01f8fb4af4");
 
     public static boolean addPermHealth(PlayerEntity player, int amount) {
         boolean canAdd = getPermHealth(player) + amount <= HealPGoodConfig.HealthUpgrades.heartContainerMax * 2;
@@ -24,6 +25,14 @@ public class ExtraHealthHelper {
         boolean canAdd = getTempHealth(player) + amount <= HealPGoodConfig.HealthUpgrades.heartCrystalMax * 2;
         if (canAdd) {
             setTempHealth(player, getTempHealth(player) + amount);
+        }
+        return canAdd;
+    }
+
+    public static boolean addBarrierHealth(PlayerEntity player, int amount) {
+        boolean canAdd = getBarrierHealth(player) + amount <= HealPGoodConfig.HealthUpgrades.barrierHealthMax * 2;
+        if (canAdd) {
+            setBarrierHealth(player, getBarrierHealth(player) + amount);
         }
         return canAdd;
     }
@@ -44,6 +53,15 @@ public class ExtraHealthHelper {
         return canRemove;
     }
 
+    public static boolean removeBarrierHealth(PlayerEntity player, int amount) {
+        boolean canRemove = getBarrierHealth(player) >= 0;
+        int amountToRemove = Math.min(getBarrierHealth(player),  amount);
+        if (canRemove) {
+            setBarrierHealth(player, Math.max(0, getBarrierHealth(player) - amountToRemove));
+        }
+        return canRemove;
+    }
+
     public static void setPermHealth(PlayerEntity player, int amount) {
         cast(player).healpgood$setPermHealth(amount);
         applyHealth(PERM_UUID, "permanent", player, amount);
@@ -53,6 +71,10 @@ public class ExtraHealthHelper {
         cast(player).healpgood$setTempHealth(amount);
         applyHealth(TEMP_UUID, "temporary", player, amount);
     }
+    public static void setBarrierHealth(PlayerEntity player, int amount) {
+        cast(player).healpgood$setBarrierHealth(amount);
+        applyHealth(BARRIER_UUID, "barrier", player, amount);
+    }
 
     public static int getPermHealth(PlayerEntity player) {
         return cast(player).healpgood$getPermHealth();
@@ -60,6 +82,10 @@ public class ExtraHealthHelper {
 
     public static int getTempHealth(PlayerEntity player) {
         return cast(player).healpgood$getTempHealth();
+    }
+
+    public static int getBarrierHealth(PlayerEntity player) {
+        return cast(player).healpgood$getBarrierHealth();
     }
 
     private static void applyHealth(UUID uuid, String name, PlayerEntity player, int amount) {

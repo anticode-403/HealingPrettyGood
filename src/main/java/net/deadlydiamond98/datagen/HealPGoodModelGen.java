@@ -34,6 +34,7 @@ public class HealPGoodModelGen extends FabricModelProvider {
                 HealPGoodItems.HEART_BOTTLE,
                 HealPGoodItems.HEART_COOKIE,
                 HealPGoodItems.CRYSTAL_APPLE,
+                HealPGoodItems.BARRIER_HEART,
                 HealPGoodBlocks.HEART_LANTERN.asItem()
         );
     }
