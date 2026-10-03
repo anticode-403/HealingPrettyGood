@@ -5,11 +5,13 @@
 	"name": "Healing Pretty Good",
 	"description": "Assortment of things relating to healing and hearts, primarily revolving around Heart Crystals",
 	"authors": [
-		"Deadlydiamond98"
+      "Deadlydiamond98",
+      "anticode_403",
+      "nekomaster1000"
 	],
 	"contact": {
 		"homepage": "https://legacy.curseforge.com/minecraft/mc-mods/healing-pretty-good",
-		"sources": "https://github.com/Deadlydiamond98/HealingPrettyGood"
+		"sources": "https://github.com/infernalstudios/HealingPrettyGood"
 	},
 	"license": "Custom",
 	"icon": "assets/healpgood/icon.png",
