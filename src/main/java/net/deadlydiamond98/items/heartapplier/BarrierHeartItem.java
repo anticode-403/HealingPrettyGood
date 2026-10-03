@@ -2,6 +2,7 @@ package net.deadlydiamond98.items.heartapplier;
 
 import net.deadlydiamond98.koalalib.common.advancement.CustomAdvancement;
 import net.deadlydiamond98.misc.HealPGoodAdvancements;
+import net.deadlydiamond98.misc.HealPGoodConfig;
 import net.deadlydiamond98.misc.HealPGoodSounds;
 import net.deadlydiamond98.util.ExtraHealthHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,6 +30,11 @@ public class BarrierHeartItem extends AbstractHeartItem {
         }
 
         return super.use(world, user, hand);
+    }
+
+    @Override
+    protected int getCooldown() {
+        return HealPGoodConfig.HealthUpgrades.barrierHealthCooldown;
     }
 
     @Override

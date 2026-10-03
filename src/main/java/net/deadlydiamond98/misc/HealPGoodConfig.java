@@ -23,7 +23,10 @@ public class HealPGoodConfig {
     public static class HealthUpgrades {
         public static boolean healOnRespawn = false;
         public static int heartCrystalMax = 10;
+        public static int heartCrystalCooldown = 10;
         public static int heartContainerMax = 10;
+        public static int heartContainerCooldown = 10;
         public static int barrierHealthMax = 10;
+        public static int barrierHealthCooldown = 10;
     }
 }
