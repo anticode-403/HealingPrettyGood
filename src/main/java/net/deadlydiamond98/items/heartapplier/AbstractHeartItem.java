@@ -43,7 +43,7 @@ public abstract class AbstractHeartItem extends Item {
     }
 
     protected static void applyCooldown(PlayerEntity user) {
-        HEALTH_MODIFIERS.forEach(item -> user.getItemCooldownManager().set(item, 20));
+        HEALTH_MODIFIERS.forEach(item -> user.getItemCooldownManager().set(item, 10));
     }
 
     protected abstract CustomAdvancement getAdvancement();
